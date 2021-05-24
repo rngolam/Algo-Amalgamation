@@ -28,4 +28,4 @@ function showSlides(n) {
 }
 
 // Autoplay functionality
-setInterval(function(){plusSlides(1)}, 4000);
+setInterval(function(){plusSlides(1)}, 4500);

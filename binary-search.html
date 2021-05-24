@@ -6,6 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binary Search</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Economica&family=Raleway&family=Roboto+Condensed:wght@300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -44,7 +48,7 @@
 
 <figure>
     <img src="images/phonebook.jpg" class="article-image" alt="phone book">
-    <figcaption>Image courtesy of Shutterstock<a href=""></a>.</figcaption>
+    <figcaption>Image courtesy of <a href="https://www.shutterstock.com/">Shutterstock</a>.</figcaption>
 </figure>
 
 <p>
@@ -110,7 +114,7 @@
     <li>
         Else if name comes before current page
         <ul>
-            <li>Search left half of phone booke</li>
+            <li>Search left half of phone book</li>
         </ul>
     </li>
     <li>
@@ -153,38 +157,41 @@
 
 <p>A sample Python implementation is shown below.</p>
 
-<pre>
-<code>
-    def bin_search(a_list, target) -> bool:
-    """
-    Searches a list for the parameterized target value and returns True if it is found and False if it is not.
-    """
+<div class="codebox">
+    <pre>
+    <code>
+        def bin_search(a_list, target) -> bool:
+        """
+        Searches a list for the parameterized target value and returns True if it is found and False if it is not.
+        """
 
-    # Set start and end points
-    first = 0
-    last = len(a_list) - 1
+        # Set start and end points
+        first = 0
+        last = len(a_list) - 1
 
-    # Repeat until start and end pointers intersect
-    while first <= last:
+        # Repeat until start and end pointers intersect
+        while first <= last:
 
-        # Calculate bisect point (this particular formula prevents potential overflow errors)
-        midpoint = first + (last - first) // 2
+            # Calculate bisect point (this particular formula prevents potential overflow errors)
+            midpoint = first + (last - first) // 2
 
-        # If the target is found at the midpoint, return True
-        if a_list[midpoint] == target:
-            return True
+            # If the target is found at the midpoint, return True
+            if a_list[midpoint] == target:
+                return True
 
-        # If the midpoint value is larger than the target, search the left half of the array
-        elif a_list[midpoint] > target:
-            last = midpoint - 1
+            # If the midpoint value is larger than the target, search the left half of the array
+            elif a_list[midpoint] > target:
+                last = midpoint - 1
 
-        # If the midpoint value is less than the target, search the right half of the array
-        else:
-            first = midpoint + 1
+            # If the midpoint value is less than the target, search the right half of the array
+            else:
+                first = midpoint + 1
 
-    return False
-</code>
-</pre>
+        return False
+    </code>
+    </pre>
+</div>
+
 <p>You can download the source code <a href="download/bin_search.py" download>here</a>.</p>
 
 <p>

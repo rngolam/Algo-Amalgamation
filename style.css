@@ -1,10 +1,8 @@
-body { 
+body {
     padding-top: 30px;
-    
 }
 
 /* navbar styling */
-
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -18,10 +16,12 @@ nav ul {
 
 nav li {
     float: left;
+    border-right: 1px solid #bbb;
 }
 
 nav li a, .dropbtn {
     display: inline-block;
+    font-family: 'Economica', sans-serif;
     color: white;
     text-align: center;
     padding: 14px 16px;
@@ -114,6 +114,7 @@ nav li.dropdown {
 /* Caption text */
 
 .carousel-caption {
+    font-family: 'Raleway', sans-serif;
     color: #f2f2f2;
     text-shadow: 2px 2px #000000;
     font-size: 15px;
@@ -135,6 +136,7 @@ nav li.dropdown {
 
 .numbertext {
     color: #f2f2f2;
+    font-family: 'Raleway', sans-serif;
     font-size: 12px;
     padding: 8px 12px;
     position: absolute;
@@ -185,16 +187,107 @@ nav li.dropdown {
     }
 }
 
+h1 {
+    
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    letter-spacing: .2rem;
+}
+
+h2 {
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    letter-spacing: .2rem;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60em;
+    line-height: 1.6;
+    color:rgb(94, 94, 94)
+}
+
+ul {
+    font-family: 'Raleway', sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60em;
+    line-height: 1.6;
+    color:rgb(94, 94, 94)
+}
+
+figure {
+    display: block;
+    text-align: center;
+    
+}
+
+figure img {
+    border: 2px solid #555;
+    max-width: 1000px;
+    max-height: 560px;
+}
+
+figure figcaption {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+/* figcaption {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.8em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60em;
+}
+
 .article-image {
     max-width: 1000px;
     max-height: 560px;
-    border: 5px solid #555;
-}
+    border: 2px solid #555;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+} */
 
 /* Code scrollbox */
+.codebox {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 
 pre {
     overflow: scroll;
-    width: 700px;
+    width: 850px;
     height: 300px;
+}
+
+/* Forms */
+
+.forms {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.forms label {
+    display: block;
+    float: left;
+    clear: left;
+    width: 50px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.forms input {
+  display: block;
+  float: left;
+}
+
+.forms textarea {
+    display: block;
 }

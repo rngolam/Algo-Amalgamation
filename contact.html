@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Economica&family=Raleway&family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -30,14 +32,16 @@
 
     <h1>Contact</h1>
 
-    <form action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php"
-        method="POST" id="contact-form">
-        Your Name: <input type="text" name="name">
-        <input type="submit">
-    </form>
-    <br>
-    <textarea rows="4" cols="50" name="comment" form="contact-form">Leave a comment...</textarea>
-
+    <div class="forms">
+        <form action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php"
+            method="POST" id="contact-form">
+            <label>Name </label><input type="text" name="name">
+            <label>Email </label><input type="email" name="email">
+            <br><br><br>
+            <textarea rows="4" cols="50" name="comment" form="contact-form" placeholder="Leave a comment here..."></textarea>
+            <input type="submit">
+        </form>
+    </div>
 </body>
 
 </html>
