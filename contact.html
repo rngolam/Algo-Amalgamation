@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Algorithms</a>
+                <div class="dropdown-content">
+                    <a href="binary-search.html">Binary Search</a>
+                    <a href="bubble-sort.html">Bubble Sort</a>
+                </div>
+            </li>
+            <li>
+                <a class="active" href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>Contact</h1>
+
+    <form action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php"
+        method="POST" id="contact-form">
+        Your Name: <input type="text" name="name">
+        <input type="submit">
+    </form>
+    <br>
+    <textarea rows="4" cols="50" name="comment" form="contact-form">Leave a comment...</textarea>
+
+</body>
+
+</html>

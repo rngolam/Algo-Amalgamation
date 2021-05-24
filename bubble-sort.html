@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Algorithms</a>
+                <div class="dropdown-content">
+                    <a href="binary-search.html">Binary Search</a>
+                    <a class="active" href="bubble-sort.html">Bubble Sort</a>
+                </div>
+            </li>
+            <li>
+                <a href="contact.html">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <h1>Bubble Sort</h1>
+
+    <figure>
+        <img src="images/bubbles.jpg" class="article-image" alt="Bubbles">
+        <figcaption>Image courtesy of <a href="https://www.gettyimages.com/">Getty Images</a>.</figcaption>
+    </figure>
+
+    <p>Bubble sort is a simple comparison sorting algorithm that repeatedly compares adjacent elements in an array and
+        swaps them if they are in the wrong order.</p>
+
+    <figure>
+        <img src="images/Bubble-sort-example-300px.gif" class="article-image" alt="Bubble sort example">
+        <figcaption>Image courtesy of <a href="https://en.wikipedia.org/wiki/Bubble_sort">Wikipedia</a>.</figcaption>
+    </figure>
+
+    <p>
+        With each iteration over the array, the smallest or largest elements will "bubble" to the top. For an array of
+        <i>n</i> elements, the first iteration of the array would make <i>n - 1</i> comparisons. In the worst case, we
+        would repeat this <i>n - 1</i> times, giving us a total of n<sup>2</sup> - 2n + 1 steps. But from what we know
+        about
+        time complexity analysis, we are mainly concerned about the dominant term as <i>n</i> gets very large, so we say
+        that <b>buble sort</b> has a worst-case time complexity of O(n<sup>2</sup>). Quadratic time complexity is
+        actually <i>horrible</i> from an efficiency standpoint, but we see bubble sort used for eductational purposes
+        due to its simplicity. It's also effective when working with small input sizes. After all, the time and
+        man-hours saved by writing simpler code is sometimes worth the tradeoff.
+    </p>
+
+    <p>Our pseudocode might look like the following:</p>
+    <ul>
+        <li>
+            For i from 0 to n - 1
+            <ul>
+                <li>
+                    For j from 0 to n - 2
+                    <ul>
+                        <li>
+                            If the i'th and i+1'th elements are out of order
+                            <ul>
+                                <li>
+                                    Perform swap
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <p>
+        There are a couple optimizations we can make. Since it is guaranteed that the largest (or smallest) element will
+        bubble to the top of our array with each iteration, we can decrease the length of our iteration by 1 with each
+        pass over the array, as we can avoid looking at the last <i>n - 1</i> elements on the <i>n</i>'th iteration.
+    </p>
+
+    <p>
+        We can make yet another optimization. One of the side effects of bubbling the elements to the top of the array
+        is
+        that the lower elements will also simultaneously be sorted into their correct positions. Or it may even be the
+        case that our array is already sorted from the start, in which casae we would not need to perform any
+        comparisons. Therefore, we can have our algorithm end whenever no swaps are performed through the use of a
+        boolean. In the best-case scenario where the array is already sorted, we would only need to iterate over the
+        array once, resulting in a lower bound of Omega(n).</p>
+
+    <p>One possible implementation of this optimization is shown below:</p>
+
+    <pre>
+    <code>
+    def bubble_sort(a_list):
+    """
+    Sorts the parameterized list in ascending order.
+    """
+
+    swaps = True
+
+    while swaps is True:
+
+        swaps = False
+
+        for i in range(len(a_list) - 1):
+
+            if a_list[i] > a_list[i + 1]:
+                a_list[i], a_list[i + 1] = a_list[i + 1], a_list[i]
+                swaps = True
+</code>
+</pre>
+
+    <p>You can download the source code <a href="download/bubble_sort.py" download>here</a>.</p>
+
+    <p>Learn more about binary search <a href="https://www.youtube.com/watch?v=RT-hUXUWQ2I">here</a>, courtesy of
+        Harvard CS50.</p>
+
+</body>
+
+</html>

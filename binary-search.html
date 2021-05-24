@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Search</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<nav class="navbar">
+    <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Algorithms</a>
+            <div class="dropdown-content">
+                <a class="active" href="binary-search.html">Binary Search</a>
+                <a href="bubble-sort.html">Bubble Sort</a>
+            </div>
+        </li>
+        <li>
+            <a href="contact.html">Contact</a>
+        </li>
+    </ul>
+</nav>
+
+<h1>Binary Search</h1>
+
+<p>
+    We last examined how you might search for an element in an unordered collection and learned that in the worst
+    case, we could end up examining every element in the collection before finding it or determining that it is not
+    present at all.
+</p>
+
+<p>But can we do better?</p>
+
+<p>
+    Consider a phone book. While these may very well be relics of days of yore,
+    they still serve as a perfect analogue today to a more efficient search strategy.
+</p>
+
+<figure>
+    <img src="images/phonebook.jpg" class="article-image" alt="phone book">
+    <figcaption>Image courtesy of Shutterstock<a href=""></a>.</figcaption>
+</figure>
+
+<p>
+    Before the days of the Internet and smartphones, if you wanted to call up "John Smith", you might have had to
+    whip out one of these rotund tomes. A naive approach to doing so might involve thumbing through each page one by
+    one and looking at each name until we've found our match. But these <strong>T H I C C</strong> books could
+    easily contain upwards of 1,000 pages! This probably isn't the greatest use of your time.
+</p>
+
+<p>
+    We could do better by turning two pages at a time. This would speed the process up considerably and effectively
+    cut our search time in half. There's a chance we could accidentally skip over John Smith's name, and this could
+    easily be remedied by simply turning one page back if we've missed him.
+</p>
+
+<p>
+    But there's still a problem with this approach. Let's say that for whatever reason, an updated revision of the
+    phone book was released containing contact information for all the residents in your town in addition to the
+    next municipality over, effectively doubling in size. Our supposedly more efficient search algorithm would end up
+    taking as long as our
+    original sequential search strategy. We could increase the number of pages we skip over, but this also results in
+    needing
+    to backtrack more pages should we miss our target. And considering that any efficiency gained by skipping pages is
+    offset linearly by
+    the addition of more contacts, this seems more like a band-aid solution.
+</p>
+
+<p>
+    Fortunately, most of us would not do things this way, for we can use the fact that phone books are <b>sorted</b>
+    alphabetically to our advantage.
+</p>
+
+<p>As you probably do intuitively, if you wanted to search for "John Smith" in the phone book, you might first open
+    the book to approximately the halfway point and see how close you are to your target.
+    This would likely land you somewhere in the "M's" or "N's". Since "S" comes after either of those two letters,
+    we know that Mr. Smith's name must lie somewhere in the right half of the phone book.
+    By extension, we can now effectively discard the left half. Then we would repeat the process on the right half
+    of the book, opening it halfway between our bisect point and the end. This might land us in the "T's". Since S
+    comes before T, we know that our target now lies somewhere to the left of the book, and we can disregard all the
+    pages to the
+    right.</p>
+
+<p>
+    We would repeat this process until we've either landed on a page with John Smith's name, or until we've narrowed
+    our search down to one page. At this point, if John Smith's name is not on this page, we can conclude he is not
+    in the phone book.
+</p>
+
+<p>Our <b>binary search</b> algorithm for a phone book might look like the following:</p>
+<ul>
+    <li>
+        If no pages
+        <ul>
+            <li>Return false</li>
+        </ul>
+    </li>
+    <li>
+        If name is found on page
+        <ul>
+            <li>Return true</li>
+        </ul>
+    </li>
+    <li>
+        Else if name comes before current page
+        <ul>
+            <li>Search left half of phone booke</li>
+        </ul>
+    </li>
+    <li>
+        Else if name comes after current page
+        <ul>
+            <li>Search right half of phone book</li>
+        </ul>
+    </li>
+</ul>
+
+<p>
+    How much time did this save us? Notice that we are repeatedly cutting our problem in half each time with this
+    algorithm. Searching a 1,000-page phone book with this approach would take ⌊log<sub>2</sub>1000 + 1⌋, or <b>10</b>
+    steps. Compare that to our sequential approach which could take up to <b>1,000</b> steps and it isn't hard to see
+    that binary search is
+    clearly superior.
+</p>
+
+<p>
+    If we doubled the size of our phone book, finding a contact using linear search would now take <b>2,000</b> steps.
+    On
+    the other hand, a binary search would only take <b>one</b> additional step, or <b>11</b> steps.
+    <br>This is because ⌊log<sub>2</sub>(2 * 1000) + 1⌋ = ⌊log<sub>2</sub>2 + log<sub>2</sub>1000 + 1⌋ = ⌊1 +
+    log<sub>2</sub>1000 + 1⌋
+</p>
+
+<p>
+    We can now apply this same concept to data structures such as arrays. Again, a key prerequisite for this algorithm
+    is that the array's elements must be in <b>sorted</b> order. First, we set left and right pointers to each end of
+    the array and calculate the midpoint (which can be arbitrarily chosen if we have an even number of elements). We
+    then look at the midpoint element. If there is a match, we've found our element. If our target is less than the
+    midpoint element, we move our
+    right pointer just left of the midpoint, which will now serve as our new upper bound. Conversely, if our target is
+    greater than the midpoint
+    element, we move our left pointer just right of the midpoint, serving as our new lower bound. We then calculate a
+    new midpoint and repeat this process until either we have found our target or our two pointers intersect one
+    another, at which point we can conclude
+    the target is not in the array
+</p>
+
+<p>A sample Python implementation is shown below.</p>
+
+<pre>
+<code>
+    def bin_search(a_list, target) -> bool:
+    """
+    Searches a list for the parameterized target value and returns True if it is found and False if it is not.
+    """
+
+    # Set start and end points
+    first = 0
+    last = len(a_list) - 1
+
+    # Repeat until start and end pointers intersect
+    while first <= last:
+
+        # Calculate bisect point (this particular formula prevents potential overflow errors)
+        midpoint = first + (last - first) // 2
+
+        # If the target is found at the midpoint, return True
+        if a_list[midpoint] == target:
+            return True
+
+        # If the midpoint value is larger than the target, search the left half of the array
+        elif a_list[midpoint] > target:
+            last = midpoint - 1
+
+        # If the midpoint value is less than the target, search the right half of the array
+        else:
+            first = midpoint + 1
+
+    return False
+</code>
+</pre>
+<p>You can download the source code <a href="download/bin_search.py" download>here</a>.</p>
+
+<p>
+    Learn more about binary search <a href="https://www.youtube.com/watch?v=T98PIp4omUA">here</a>, courtesy of Harvard
+    CS50.
+</p>
+</body>
+
+</html>
