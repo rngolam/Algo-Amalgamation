@@ -2,8 +2,8 @@ body {
     padding-top: 30px;
 }
 
+/* Horizontal navbar adapted from https://www.w3schools.com/css/css_navbar_horizontal.asp */
 /* navbar styling */
-
 nav ul {
     list-style-type: none;
     margin: 0;
