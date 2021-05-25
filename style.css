@@ -61,6 +61,8 @@ nav li.dropdown {
     display: block;
 }
 
+
+/* Image carousel adapted from https://www.w3schools.com/howto/howto_js_slideshow.asp */
 /* Slideshow container */
 
 .slideshow-container {
@@ -209,6 +211,27 @@ p {
     color:rgb(94, 94, 94)
 }
 
+button {
+    background-color: #0099ff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    font-family: 'Economica', sans-serif;
+    font-size: 1.6em;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 auto;
+    display: block;
+}
+
+#bubbleContent {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6em;
+    text-align: center;;
+    line-height: 1.6;
+}
+
 ul {
     font-family: 'Raleway', sans-serif;
     margin-left: auto;
@@ -235,23 +258,6 @@ figure figcaption {
     font-size: 0.8em;
     text-align: center;
 }
-
-/* figcaption {
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.8em;
-    margin-left: auto;
-    margin-right: auto;
-    width: 60em;
-}
-
-.article-image {
-    max-width: 1000px;
-    max-height: 560px;
-    border: 2px solid #555;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-} */
 
 /* Code scrollbox */
 .codebox {
