@@ -54,7 +54,8 @@
         about
         time complexity analysis, we are mainly concerned about the dominant term as <i>n</i> gets very large, so we say
         that <b>buble sort</b> has a worst-case time complexity of O(n<sup>2</sup>). Quadratic time complexity is
-        actually <i>horrible</i> from an efficiency standpoint, but we see bubble sort used for eductational purposes
+        actually <i>horrible</i> from an efficiency standpoint, as our number of comparisons grows exponentially with
+        input size. But we see bubble sort used for educational purposes
         due to its simplicity. It's also effective when working with small input sizes. After all, the time and
         man-hours saved by writing simpler code is sometimes worth the tradeoff.
     </p>
@@ -91,12 +92,12 @@
         We can make yet another optimization. One of the side effects of bubbling the elements to the top of the array
         is
         that the lower elements will also simultaneously be sorted into their correct positions. Or it may even be the
-        case that our array is already sorted from the start, in which casae we would not need to perform any
+        case that our array is already sorted from the start, in which case we would not need to perform any
         comparisons. Therefore, we can have our algorithm end whenever no swaps are performed through the use of a
         boolean. In the best-case scenario where the array is already sorted, we would only need to iterate over the
         array once, resulting in a lower bound of Omega(n).</p>
 
-    <p>One possible implementation of this optimization is shown below:</p>
+    <p>One possible implementation of this optimization in Python is shown below:</p>
 
     <div class="codebox">
         <pre>
@@ -107,24 +108,44 @@
     """
 
     swaps = True
+    pass_count = 0
 
+    # Repeat until no more swaps are performed
     while swaps is True:
 
         swaps = False
 
-        for i in range(len(a_list) - 1):
+        # Compare n - 1 - pass count # of elements
+        for i in range(len(a_list) - 1 - pass_count):
 
+            # If elements are out of order, swap them
             if a_list[i] > a_list[i + 1]:
                 a_list[i], a_list[i + 1] = a_list[i + 1], a_list[i]
                 swaps = True
+
+        pass_count += 1
     </code>
         </pre>
     </div>
 
-    <p>You can download the source code <a href="download/bubble_sort.py" download>here</a>.</p>
+    <p>
+        You can download the source code <a href="download/bubble_sort.py" download>here</a>.
+    </p>
 
-    <p>Learn more about binary search <a href="https://www.youtube.com/watch?v=RT-hUXUWQ2I">here</a>, courtesy of
-        Harvard CS50.</p>
+    <p>
+        Click the button below to view a live demo of bubble sort in your browser:
+    </p>
+
+    <button id="startBubbleSort">Demo</button>
+    <div id="bubbleContent"></div>
+    <br>
+
+    <p>
+        Learn more about bubble sort <a href="https://www.youtube.com/watch?v=RT-hUXUWQ2I">here</a>, courtesy of
+        Harvard CS50.
+    </p>
+
+    <script src="script/bubbleSort.js"></script>
 
 </body>
 
