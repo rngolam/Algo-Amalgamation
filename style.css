@@ -341,6 +341,7 @@ pre {
 .forms textarea {
     font-family: 'Raleway', sans-serif;
     display: block;
+    resize: none;
     padding: 12px 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
