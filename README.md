@@ -4,7 +4,7 @@
 
 ![algo-amalgamation](https://user-images.githubusercontent.com/69094063/119646455-cf1e6180-bde4-11eb-912f-9a87a998794a.PNG)
 
-![image](https://user-images.githubusercontent.com/69094063/119646825-376d4300-bde5-11eb-92c3-01e56a954dc0.png)
+![dN5Bnxy4pN](https://user-images.githubusercontent.com/69094063/119646865-43590500-bde5-11eb-9c4e-b69b77ca603f.gif)
 
 [Heroku Link](https://algo-amalgamation.herokuapp.com/)
 
