@@ -2,7 +2,7 @@
 
 **Algo Amalgamation** is a website dedicated to teaching novice programmers and introductory Computer Science students fundamental searching and sorting algorithms. It contains various written articles featuring explanations, pseudocode, actual implementations, and live dynamic demos in JavaScript.
 
-![algo-amalgamation](https://user-images.githubusercontent.com/69094063/119646455-cf1e6180-bde4-11eb-912f-9a87a998794a.PNG)
+![image](https://user-images.githubusercontent.com/69094063/119647052-70a5b300-bde5-11eb-9998-0716c26a235f.png)
 
 ![dN5Bnxy4pN](https://user-images.githubusercontent.com/69094063/119646865-43590500-bde5-11eb-9c4e-b69b77ca603f.gif)
 
